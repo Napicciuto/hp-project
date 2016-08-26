@@ -1,0 +1,9 @@
+version: '2'
+services:
+  hp-app: &base
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    command: bash -c " npm start"
+
