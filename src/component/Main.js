@@ -5,7 +5,7 @@ class Main extends React.Component {
     return (
       <div>
         <p className="app-intro">
-          <b>Comming Soon</b>
+          <b>Coming Soon</b>
         </p>
       </div>
     )

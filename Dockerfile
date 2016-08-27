@@ -1,20 +1,8 @@
-FROM node:6-slim
+FROM nodesource/node:4.0
 
-ENV APP_ROOT /app
+ADD package.json package.json
+RUN npm install  
+ADD . .
 
-RUN apt-get update && apt-get install libpng12-0
-
-
-RUN mkdir -p $APP_ROOT
-ADD package.json $APP_ROOT/package.json
-RUN npm install
-ADD . $APP_ROOT
-
-WORKDIR $APP_ROOT
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["npm","start"]
 
